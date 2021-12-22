@@ -1,5 +1,6 @@
 import tekore as tk
 from tekore._client.full import Spotify
+import datetime
 
 
 conf = tk.config_from_file('tekore.cfg', return_refresh=True)
@@ -19,9 +20,14 @@ new_playlist_tracks = []
 for i in discover.tracks.items:
     new_playlist_tracks.append(i.track.uri)
 
+today = datetime.date.today()
 
-# create new empty playlist
-new_playlist = spotify.playlist_create("davedwards","Discover Weekly x",public=True, description = "Copy of Discover Weekly")
+year, week_num, day_of_week = today.isocalendar()
 
-# Add all tracks to new playlist
-spotify.playlist_add(new_playlist.id, new_playlist_tracks)
+print(year, week_num, day_of_week)
+
+# # create new empty playlist
+# new_playlist = spotify.playlist_create("davedwards","Discover Weekly x",public=True, description = "Copy of Discover Weekly")
+
+# # Add all tracks to new playlist
+# spotify.playlist_add(new_playlist.id, new_playlist_tracks)
