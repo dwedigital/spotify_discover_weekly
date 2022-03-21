@@ -170,3 +170,5 @@ pip-wheel-metadata/
 .vim/
 
 tekore.cfg
+.gcloudignore
+.vscode/
