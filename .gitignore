@@ -168,3 +168,5 @@ prime/
 stage/
 pip-wheel-metadata/
 .vim/
+
+tekore.cfg
